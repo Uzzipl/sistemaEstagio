@@ -32,8 +32,10 @@
   request.setAttribute("currentPage", currentPage);
   request.setAttribute("totalPages", totalPages);
 %>
-
+<p><a href="index.html" class="btn">[home]</a></p>
 <h1>Listagem de Usuários</h1>
+
+
 <p><a href="formUser.jsp" class="btn">➕ Novo Usuário</a></p>
 
 <table class="table-user">
