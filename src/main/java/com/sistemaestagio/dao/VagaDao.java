@@ -5,15 +5,13 @@ import java.util.*;
 import com.sistemaestagio.bean.Vaga;
 
 public class VagaDao {
-    public static Connection getConnection() {
-        Connection con = null;
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/sistemaestagio", "root", "");
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-        return con;
+	public static Connection getConnection() throws SQLException, ClassNotFoundException {
+        Class.forName("com.mysql.jdbc.Driver");
+        return DriverManager.getConnection(
+            "jdbc:mysql://localhost:3306/sistemaestagio?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=UTC",
+            "root", 
+            ""      
+        );
     }
 
     public static int addVaga(Vaga v) {
